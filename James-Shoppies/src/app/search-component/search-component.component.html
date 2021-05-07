@@ -5,3 +5,9 @@
   could also invlude if it is a movie, series or episode 
   can return short and long plots, may be useful for the movies component to return the long plot.
 -->
+
+<h2>Search for a movie, Series or episode</h2>
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+<input id="shoppietitle" type="text" formControlName="MovieTitle">
+<button type="submit">Search</button>
+</form>
