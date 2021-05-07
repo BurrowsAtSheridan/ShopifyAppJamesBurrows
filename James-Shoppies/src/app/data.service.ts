@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, retry } from 'rxjs/operators';
+import { catchError, map, retry,tap } from 'rxjs/operators';
+import { movies} from '../movies';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-   RestApiServer = "http://www.omdbapi.com/?i=tt3896198&apikey=644bc587&t=j&r=json"
+   RestApiServer = "http://www.omdbapi.com/?i=tt3896198&apikey=644bc587&t=j"
   constructor(private httpClient: HttpClient) { }
 
-  public sendGetRequest(){
-    return this.httpClient.get(this.RestApiServer).pipe(map((result:any)=>result.data));
+  public sendGetRequest(): Observable<movies[]>{
+    return this.httpClient.get<movies[]>(this.RestApiServer);
   }
 }
 
