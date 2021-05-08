@@ -36,7 +36,7 @@ export class SearchComponentComponent implements OnInit {
   onSubmit(): void{
     //this will call the movies search api and should return a movies object
     console.log(this.searchForm.value.MovieTitle);
-    this.datab = this.dataService.sendGetRequest().subscribe((data: any[])=>{
+    this.datab = this.dataService.sendGetRequest(this.searchForm.value.MovieTitle).subscribe((data: any[])=>{
       console.log(data);
     });
     console.log(20);
