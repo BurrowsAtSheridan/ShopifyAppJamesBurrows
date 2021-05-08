@@ -7,3 +7,9 @@
   should contain a button to nominate 
   IF a search result has already been nominated disable its nominate button 
 -->
+<h2>Results for searchTerm</h2>
+<ul>
+  <li *ngfor let movies of result>
+    <p>{{result.Title}}</p>
+  </li>
+</ul>

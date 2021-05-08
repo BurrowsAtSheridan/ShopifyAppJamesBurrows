@@ -8,7 +8,7 @@ import { movies} from '../movies';
 })
 export class DataService {
 
-   RestApiServer = "http://www.omdbapi.com/?i=tt3896198&apikey=644bc587&t="
+   RestApiServer = "http://www.omdbapi.com/?i=tt3896198&apikey=644bc587&s="
   constructor(private httpClient: HttpClient) { }
 
   public sendGetRequest(searchTerm:string): Observable<movies[]>{
